@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
     boolean flag = false;
     private ProgressDialog pgLogin;
 
-    String URL="http://www.polussoftware.com/podium_mobile/school_list.js";
+    String URL="http://www.domainname.com/domainname/domainname.js";
     String UrlBus = "";
     String portalIdParse="";
     String vehicleIdParse="";
@@ -160,7 +160,7 @@ public class MainActivity extends Activity {
                // Toast.makeText(MainActivity.this,"Selected School "+ parent.getItemAtPosition(position),Toast.LENGTH_LONG).show();
                // Toast.makeText(MainActivity.this,"Selected portList "+  portList.get(position),Toast.LENGTH_LONG).show();
                 selectedSchool = ""+parent.getItemAtPosition(position);
-                UrlBus = "http://qa.podiumglobal.com/DesktopModules/VehicleTrackingClassLibrary/API/Vehicle/GetBusNo?portalId="+portList.get(position);
+                UrlBus = "http://domainname/domainname/domainname/API/Vehicle/GetBusNo?portalId="+portList.get(position);
                 portalIdParse = portList.get(position);
                 vehicleList.clear();
                 busList.clear();
@@ -201,7 +201,7 @@ public class MainActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                // Toast.makeText(MainActivity.this,"Selected place "+parent.getItemAtPosition(position),Toast.LENGTH_LONG).show();
-                urlRoute = "http://qa.podiumglobal.com/DesktopModules/VehicleTrackingClassLibrary/API/VehicleRoute/GetRoutes?portalId=" + portalIdParse + "&vehicleId="+vehicleList.get(position);
+                urlRoute = "http://domainname/domainname/domainname/API/VehicleRoute/GetRoutes?portalId=" + portalIdParse + "&vehicleId="+vehicleList.get(position);
                 Calendar cal= Calendar.getInstance(TimeZone.getDefault());
                 startTime = cal.getTimeInMillis();
 
@@ -242,7 +242,7 @@ public class MainActivity extends Activity {
         spinnerRoute.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                urlStops = "http://qa.podiumglobal.com/DesktopModules/VehicleTrackingClassLibrary/API/VehicleStops/GetStops?portalId="+ portalIdParse +"&routeId="+ routeIdList.get(position);
+                urlStops = "http://domainname/domainname/domainname/API/VehicleStops/GetStops?portalId="+ portalIdParse +"&routeId="+ routeIdList.get(position);
                 routeIdParse = routeIdList.get(position);
                 stopIdList.clear();
                 stopNameList.clear();
@@ -334,7 +334,7 @@ public class MainActivity extends Activity {
                    Toast.makeText(MainActivity.this,"GPS is not locating , \n Please try again !",Toast.LENGTH_LONG).show();
                }
                else {
-                   urlSubmit = "http://qa.podiumglobal.com/DesktopModules/VehicleTrackingClassLibrary/API/VehicleStops/UpdateStops?stopId=" + stopId + "&Latitude=" + getFromPreference("latitude") + "&Longitude=" + getFromPreference("longitude") + "&timeInterval=" + sMinute;
+                   urlSubmit = "http://domainname/domainname/domainname/API/VehicleStops/UpdateStops?stopId=" + stopId + "&Latitude=" + getFromPreference("latitude") + "&Longitude=" + getFromPreference("longitude") + "&timeInterval=" + sMinute;
                    if(cd.haveNetworkConnection()) {
                        new MyAsyncTaskSubmit().execute();
                        pgLogin = new ProgressDialog(MainActivity.this);
