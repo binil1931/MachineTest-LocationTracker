@@ -1,4 +1,4 @@
-package locationtracker.polussoftware.com.podiumlocationtracker;
+package locationtracker.polussoftware.com.locationtracker;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
